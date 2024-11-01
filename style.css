@@ -1,0 +1,169 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s;
+}
+
+:root {
+    --background-color: #ffe4e1; /* Light pink */
+    --container-color: #fff; /* White */
+    --text-color: #333; /* Dark text */
+    --button-color: #ff69b4; /* Pink */
+    --button-hover-color: #ff1493; /* Darker pink */
+}
+
+.dark-mode {
+    --background-color: #1a1a1a; /* Dark gray */
+    --container-color: #2a2a2a; /* Slightly lighter gray for contrast */
+    --text-color: #f1f1f1; /* Light gray for readability */
+    --button-color: #d48fb5; /* Soft pink */
+    --button-hover-color: #ffb3c6; /* Lighter pink for hover */
+}
+
+.container {
+    background: linear-gradient(145deg, #ffe6eb, #fff);
+    border-radius: 20px;
+    padding: 25px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url('image-16.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.dark-mode .container {
+    background: linear-gradient(145deg, #2a2a2a, #3a3a3a); /* Darker gradient */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* More pronounced shadow in dark mode */
+    background-image: url('dark.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kitty-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+    animation: bounce 1.5s infinite alternate;
+    filter: drop-shadow(0px 0px 8px #ff69b4);
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+}
+
+h1, h2, .task-counter, footer p {
+    color: var(--text-color);
+}
+
+.highlight {
+    color: var(--button-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 0, 144, 0.5);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"], select {
+    padding: 12px;
+    border: 2px solid var(--button-color);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+button {
+    background-color: var(--button-color);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.dark-mode button {
+    background-color: var(--button-color); /* Consistent button colors in dark mode */
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: var(--container-color);
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Add a transition effect */
+}
+
+.dark-mode li {
+    background-color: #3a3a3a; /* Darker task items for visibility */
+    color: var(--text-color);
+}
+
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    background-color: #e6e6e6;
+}
+
+li:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.low { border-left: 5px solid #98fb98; }
+.medium { border-left: 5px solid #ffd700; }
+.high { border-left: 5px solid #ff6347; }
+
+.clear-all, .clear-completed {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.theme-switch input {
+    width: 20px;
+    height: 20px;
+}
+

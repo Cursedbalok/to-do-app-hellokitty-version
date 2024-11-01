@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Kitty To-Do List 🐱</h1>
+        <h2>Special for <span class="highlight">Tuba Chan</span> ❤️</h2>
+        
+        <div class="kitty-icon">🐱</div>
+        
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <select id="priorityInput">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+                <input type="date" id="dueDateInput" placeholder="Due Date">
+            </select>
+        </div>
+        
+        <button class="add-task" onclick="addTask()">Add Task</button>
+        
+        <p class="task-counter">Tasks Left: <span id="taskCount">0</span></p>
+        
+        <ul id="taskList"></ul>
+        
+        <div class="button-group">
+            <button class="clear-completed" onclick="clearCompletedTasks()">Clear Completed Tasks</button>
+            <button class="clear-all" onclick="clearAllTasks()">Clear All Tasks</button>
+        </div>
+
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+            <span>Dark Mode 🌙</span>
+        </label>
+
+        <footer>
+            <p>Created by Mohammad Emon 🌸</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
